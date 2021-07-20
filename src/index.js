@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {Provider} from 'react-redux'
+import {configureStore, createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import cartReducer from './reducer';
+
+
+const store = configureStore({
+  reducer: cartReducer.reducer
+})
 
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
-  </React.StrictMode>,
+      </Provider>
+  </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 
