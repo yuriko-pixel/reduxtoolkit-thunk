@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {useEffect} from 'react'
 import todoSlice from './reducer';
 import fetchCart from './fetch';
-import { fetchPlayerList } from "./reducer";
+import { fetchCartList } from "./reducer";
 
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchPlayerList())
+    dispatch(fetchCartList())
   }, [])
   return (
     <div className="App">
